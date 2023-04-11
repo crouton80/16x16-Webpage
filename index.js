@@ -16,7 +16,7 @@ function populateBoard(size) {
     board.insertAdjacentElement("beforeend", square);
   }
 }
-populateBoard(16);
+populateBoard(16); // Board is 16x16 by default
 let error = document.querySelector(".error");
 function changeSize(input) {
   if (input >= 2 && input <= 100) {
@@ -47,8 +47,9 @@ function resetSquare() {
   let squares = board.querySelectorAll("div");
   squares.forEach((div) => (div.style.backgroundColor = "white"));
 }
+// Mode Toggle
 let mode = document.querySelector(".mode");
-document.querySelector("body").addEventListener("click", (e) => {
+document.querySelector(".board").addEventListener("click", (e) => {
   if (e.target.tagName != "BUTTON") {
     click = !click;
     if (click) {
